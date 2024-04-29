@@ -3,7 +3,7 @@ import express from "express";
 import "express-async-errors";
 import cors from "cors";
 import "dotenv/config"
-import { insertData } from "../../inserData"
+import { insertData } from "@/csv/inserData"
 
 const PORT = process.env.PORT;
 

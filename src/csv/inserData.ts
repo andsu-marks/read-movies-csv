@@ -1,5 +1,5 @@
 import { PrismaClient } from '@prisma/client';
-import parseCSV from './csv/parser';
+import parseCSV from './parser';
 
 export async function insertData() {
   const prisma = new PrismaClient();
@@ -10,7 +10,6 @@ export async function insertData() {
     const filePath = './movielist.csv';
     
     const movies = await parseCSV(filePath);
-    console.log(movies)
 
     for (const movie of movies) {
       await prisma.movie.create({
